@@ -1,0 +1,86 @@
+{
+  "name": "diz-theme",
+  "version": "0.0.0",
+  "description": "Basic of the Diz theme",
+  "main": "./diz-theme.js",
+  "scripts": {
+    "start": "gulp watch",
+    "prepublish": "yarn build",
+    "build": "NODE_ENV=production gulp babel",
+    "pretest": "yarn build",
+    "test": "xo"
+  },
+  "keywords": [
+    "diz"
+  ],
+  "author": "nju33 <nju33.ki@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "babel-loader": "^6.2.10",
+    "babel-plugin-transform-runtime": "^6.15.0",
+    "babel-preset-react": "^6.16.0"
+  },
+  "devDependencies": {
+    "ava": "^0.17.0",
+    "babel-eslint": "^7.1.1",
+    "babel-plugin-transform-async-to-generator": "^6.16.0",
+    "babel-plugin-transform-class-properties": "^6.19.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-object-rest-spread": "^6.20.2",
+    "babel-polyfill": "^6.20.0",
+    "babel-preset-babili": "^0.0.9",
+    "babel-preset-env": "^1.1.1",
+    "babel-preset-es2015": "^6.18.0",
+    "babel-register": "^6.18.0",
+    "eslint-config-xo-react": "^0.10.0",
+    "eslint-plugin-react": "^6.8.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-debug": "^3.0.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-shell": "^0.5.2",
+    "gulp-sourcemaps": "^1.9.1",
+    "gulp-tap": "^0.1.3",
+    "gulp-util": "^3.0.7",
+    "xo": "^0.17.1"
+  },
+  "ava": {
+    "files": [
+      "test/**/*.js"
+    ],
+    "require": [
+      "babel-register",
+      "babel-polyfill"
+    ],
+    "babel": "inherit"
+  },
+  "xo": {
+    "space": 2,
+    "envs": [
+      "browser"
+    ],
+    "parser": "babel-eslint",
+    "extends": "xo-react",
+    "overrides": [
+      {
+        "files": "lib/renderer.js",
+        "rules": {
+          "import/no-dynamic-require": 0
+        }
+      },
+      {
+        "files": "lib/**/*.jsx",
+        "rules": {
+          "unicorn/filename-case": [
+            "error",
+            {
+              "case": "pascalCase"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "peerDependencies": {}
+}
