@@ -2,6 +2,7 @@
   "name": "diz-theme",
   "version": "0.0.0",
   "description": "Basic of the Diz theme",
+  "repository": "nju33/diz-theme",
   "main": "./diz-theme.js",
   "scripts": {
     "start": "gulp watch",
